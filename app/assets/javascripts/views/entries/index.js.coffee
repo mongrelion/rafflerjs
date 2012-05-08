@@ -21,6 +21,14 @@ class Rafflerjs.Views.EntriesIndex extends Backbone.View
   createEntry: (e) ->
     e.preventDefault()
     newEntryName = $('#new-entry-name')
-    @collection.create name: newEntryName.val()
-    newEntryName.val ''
+    attributes = name: newEntryName.val()
+    @collection.create attributes,
+      wait: true
+      success: -> newEntryName.val ''
+      error: @handleError
 
+  handleError: (entry, response) ->
+    if 422 == response.status
+      errors = $.parseJSON(response.responseText).errors
+      for attribute, messages of errors
+        alert "#{attribute} #{message}" for message in messages
