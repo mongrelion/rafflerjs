@@ -4,8 +4,10 @@
 
 <form id="new-entry" class="form-inline">
   <input type="text" name="name" id="new-entry-name" class="span4"/>
-  <input type="submit" value="Add" class="btn btn-success" />
+  <input type="submit" value="Add" class="btn btn-inverse" />
 </form>
 
 <table id="entries" class="table table-bordered table-striped">
 </table>
+
+<button id="draw" class="btn btn-inverse">Draw Winner</button>

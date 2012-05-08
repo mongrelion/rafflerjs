@@ -1,1 +1,6 @@
-<td><%= @entry.get 'name' %><td>
+<td>
+  <%= @entry.get 'name' %>
+  <% if @entry.isWinner(): %>
+    <span class="label winner">WINNER</span>
+  <% end %>
+</td>
