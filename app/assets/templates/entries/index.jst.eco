@@ -2,16 +2,10 @@
   <h1>Rafflerjs</h1>
 </div>
 
-
 <form id="new-entry" class="form-inline">
   <input type="text" name="name" id="new-entry-name" class="span4"/>
   <input type="submit" value="Add" class="btn btn-success" />
 </form>
 
-<table class="table table-bordered table-striped">
-  <% for entry in @entries.models: %>
-    <tr>
-      <td><%= entry.get 'name' %></td>
-    </tr>
-  <% end %>
+<table id="entries" class="table table-bordered table-striped">
 </table>
