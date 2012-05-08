@@ -1,6 +1,17 @@
-<h1>Rafflerjs</h1>
-<ul>
+<div class="well">
+  <h1>Rafflerjs</h1>
+</div>
+
+
+<form id="new-entry" class="form-inline">
+  <input type="text" name="name" id="new-entry-name" class="span4"/>
+  <input type="submit" value="Add" class="btn btn-success" />
+</form>
+
+<table class="table table-bordered table-striped">
   <% for entry in @entries.models: %>
-    <li><%= entry.get 'name' %></li>
+    <tr>
+      <td><%= entry.get 'name' %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
