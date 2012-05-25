@@ -14,4 +14,4 @@ class Rafflerjs.Views.Entry extends Backbone.View
 
   render: ->
     @$el.html @template entry: @model
-    this
+    @
